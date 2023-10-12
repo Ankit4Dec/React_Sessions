@@ -3,21 +3,18 @@ import DisplayText from "../DisplayText/DisplayText";
 import InputText from "../InputText/InputText";
 
 const InputDisplayText = () => {
+  const [text, setText] = useState("");
 
-    const [text , setText] = useState('');
-    console.log(text)
+  const changeHandler = (e) => {
+    // need to update the state with the new value;
+    setText(e.target.value);
+  };
 
   return (
-    <div>
-      <InputText
-        changeHandler={(e) => {
-            // need to update the state with the new value;
-            setText(e.target.value);
-        //   console.log("from parent ===>>", e.target.value);
-        }}
-      />
+    <>
+      <InputText changeHandler={changeHandler} />
       <DisplayText msg={text} />
-    </div>
+    </>
   );
 };
 

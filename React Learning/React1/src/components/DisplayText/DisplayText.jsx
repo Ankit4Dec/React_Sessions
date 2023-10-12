@@ -1,7 +1,7 @@
-const DisplayText = (props) =>{
+const DisplayText = ({msg}) =>{
     return(
         <div>
-            <h3>{props.msg}</h3>
+            <h3>{msg}</h3>
         </div>
     );
 }

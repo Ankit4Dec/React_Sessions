@@ -1,5 +1,5 @@
-const InputText = (props)=>{
-    return <input type="text" onChange={props.changeHandler} />;
+const InputText = ({changeHandler})=>{
+    return <input type="text" onChange={changeHandler} />;
 }
 
 export default InputText;
