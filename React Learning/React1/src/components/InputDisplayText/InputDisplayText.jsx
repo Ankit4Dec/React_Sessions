@@ -1,7 +1,8 @@
 import { useState } from "react";
 import DisplayText from "../DisplayText/DisplayText";
 import InputText from "../InputText/InputText";
-import "./InputDisplayText.css";
+// import "./InputDisplayText.css";
+import styles from './InputDisplayText.module.css';
 
 const InputDisplayText = () => {
   const [text, setText] = useState("");
@@ -13,7 +14,7 @@ const InputDisplayText = () => {
 
   return (
     <>
-      <div className="container">
+      <div className={styles.container}>
         <InputText changeHandler={changeHandler} />
         <DisplayText msg={text} />
       </div>

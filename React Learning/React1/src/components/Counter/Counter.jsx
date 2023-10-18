@@ -1,5 +1,7 @@
 import { useState } from "react";
-import "./Counter.css";
+// import "./Counter.css";
+import styles from "./Counter.module.css";
+import { Button } from "react-bootstrap";
 
 const Counter = () => {
   const [count, SetCount] = useState(0);
@@ -26,16 +28,18 @@ const Counter = () => {
 
   return (
     <>
-      <div className="container">
+      <div className={styles.container}>
         <h2>{count}</h2>
         <div>
-          <button className="btn-primary" onClick={incrementHandler}>
+          <button className={styles.btnprimary} onClick={incrementHandler}>
             ++
           </button>
           <button style={styleObj} onClick={decrementHandler}>
             --
           </button>
-          <button onClick={resetHandler}>Reset</button>
+          <Button variant="danger" onClick={resetHandler}>
+            RESET
+          </Button>
         </div>
         <input
           type="text"
