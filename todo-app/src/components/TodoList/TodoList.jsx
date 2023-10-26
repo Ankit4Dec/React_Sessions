@@ -4,7 +4,7 @@ import Input from "../Input/Input";
 import List from "../List/List";
 
 const TodoList = () => {
-  const [tasks, setTasks] = useState(["a1", "a2", "a3", "a4"]);
+  const [tasks, setTasks] = useState([]);
   const [task, setTask] = useState("");
 
   const changeHandler = (e) => {
@@ -12,13 +12,33 @@ const TodoList = () => {
   };
 
   const buttonClickHandler = () => {
-    setTasks([...tasks, task]);
+    const trimTask = task.trim();
+    if (trimTask) {
+      setTasks([...tasks, task]);
+      setTask("");
+    } else {
+      setTask("");
+    }
+  };
+
+  const InputKeyHandler = (e) => {
+    if (e.key === "Enter") {
+      buttonClickHandler();
+    }
   };
   return (
     <>
-      <Input changeHandler={changeHandler} />
+      <Input
+        changeHandler={changeHandler}
+        value={task}
+        keyHandler={InputKeyHandler}
+      />
       <span style={{ marginLeft: "10px" }}></span>
-      <Button clickHandler={buttonClickHandler}/>
+      <Button
+        clickHandler={buttonClickHandler}
+        isDisable={!task}
+        btnText="Add to the List"
+      />
       <div style={{ marginTop: "15px" }}>
         <List list={tasks} />
       </div>
