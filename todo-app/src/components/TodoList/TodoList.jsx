@@ -4,14 +4,22 @@ import Input from "../Input/Input";
 import List from "../List/List";
 
 const TodoList = () => {
+  const [tasks, setTasks] = useState(["a1", "a2", "a3", "a4"]);
+  const [task, setTask] = useState("");
 
-    const [tasks, setTasks] = useState(['a1','a2','a3','a4']);
+  const changeHandler = (e) => {
+    setTask(e.target.value);
+  };
+
+  const buttonClickHandler = () => {
+    setTasks([...tasks, task]);
+  };
   return (
     <>
-      <Input />
+      <Input changeHandler={changeHandler} />
       <span style={{ marginLeft: "10px" }}></span>
-      <Button />
-      <div style={{marginTop: '15px'}}>
+      <Button clickHandler={buttonClickHandler}/>
+      <div style={{ marginTop: "15px" }}>
         <List list={tasks} />
       </div>
     </>
