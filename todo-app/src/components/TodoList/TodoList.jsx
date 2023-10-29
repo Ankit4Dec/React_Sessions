@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import List from "../List/List";
@@ -6,6 +6,17 @@ import List from "../List/List";
 const TodoList = () => {
   const [tasks, setTasks] = useState([]);
   const [task, setTask] = useState("");
+
+  //// ComponentDidMount  -  then dependencies list will be empty
+  useEffect(() => {
+    const list = JSON.parse(localStorage.getItem("todoList"));
+    setTasks(list || []);
+  }, []);
+
+  useEffect(() => {
+    // update the list in local storage
+    localStorage.setItem("todoList", JSON.stringify(tasks));
+  }, [tasks]);
 
   const changeHandler = (e) => {
     setTask(e.target.value);
