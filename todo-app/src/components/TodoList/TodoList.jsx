@@ -41,7 +41,6 @@ const TodoList = () => {
   };
 
   const isDoneHandler = (index) => {
-    console.log("is Done", index);
     const list = [...tasks];
     list[index].isDone = true;
     setTasks(list);
