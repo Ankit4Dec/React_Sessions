@@ -46,6 +46,12 @@ const TodoList = () => {
     setTasks(list);
   };
 
+  const deleteHandler = (index) => {
+    const list = [...tasks];
+    list.splice(index, 1);
+    setTasks(list);
+  };
+
   return (
     <>
       <Input
@@ -60,7 +66,11 @@ const TodoList = () => {
         btnText="Add to the List"
       />
       <div style={{ marginTop: "15px" }}>
-        <List list={tasks} isDoneHandler={isDoneHandler} />
+        <List
+          list={tasks}
+          isDoneHandler={isDoneHandler}
+          deleteHandler={deleteHandler}
+        />
       </div>
     </>
   );
