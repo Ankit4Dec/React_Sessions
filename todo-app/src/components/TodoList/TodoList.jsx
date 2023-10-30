@@ -25,11 +25,13 @@ const TodoList = () => {
   const buttonClickHandler = () => {
     const trimTask = task.trim();
     if (trimTask) {
-      setTasks([...tasks, task]);
-      setTask("");
-    } else {
-      setTask("");
+      const taskObj = {
+        item: trimTask,
+        isDone: false
+      }
+      setTasks([...tasks, taskObj]);
     }
+    setTask("");
   };
 
   const InputKeyHandler = (e) => {
