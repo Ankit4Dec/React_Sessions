@@ -27,8 +27,8 @@ const TodoList = () => {
     if (trimTask) {
       const taskObj = {
         item: trimTask,
-        isDone: false
-      }
+        isDone: false,
+      };
       setTasks([...tasks, taskObj]);
     }
     setTask("");
@@ -39,6 +39,14 @@ const TodoList = () => {
       buttonClickHandler();
     }
   };
+
+  const isDoneHandler = (index) => {
+    console.log("is Done", index);
+    const list = [...tasks];
+    list[index].isDone = true;
+    setTasks(list);
+  };
+
   return (
     <>
       <Input
@@ -53,7 +61,7 @@ const TodoList = () => {
         btnText="Add to the List"
       />
       <div style={{ marginTop: "15px" }}>
-        <List list={tasks} />
+        <List list={tasks} isDoneHandler={isDoneHandler} />
       </div>
     </>
   );
