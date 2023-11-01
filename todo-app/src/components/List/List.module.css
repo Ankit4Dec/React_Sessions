@@ -1,0 +1,17 @@
+.ulContainer {
+    display: inline-block;
+}
+
+.actionBtn {
+    margin: 5px;
+
+}
+
+.itemContainer {
+    padding: 0 10px;
+}
+
+.doneItem{
+    background: aquamarine;
+    border: solid 2px #ddd;
+}
