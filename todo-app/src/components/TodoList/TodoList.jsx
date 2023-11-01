@@ -28,6 +28,7 @@ const TodoList = () => {
       const taskObj = {
         item: trimTask,
         isDone: false,
+        isEditing: false,
       };
       setTasks([...tasks, taskObj]);
     }
@@ -52,6 +53,20 @@ const TodoList = () => {
     setTasks(list);
   };
 
+  const swapItemHandler = (index, finalIndex) => {
+    const list = [...tasks];
+    const item = list[index];
+    list[index] = list[finalIndex];
+    list[finalIndex] = item;
+    setTasks(list);
+  };
+
+  const isEditingHandler = (index) => {
+    const list = [...tasks];
+    list[index].isEditing = true;
+    setTasks(list);
+  };
+
   return (
     <>
       <Input
@@ -70,6 +85,8 @@ const TodoList = () => {
           list={tasks}
           isDoneHandler={isDoneHandler}
           deleteHandler={deleteHandler}
+          swapItemHandler={swapItemHandler}
+          isEditingHandler={isEditingHandler}
         />
       </div>
     </>
