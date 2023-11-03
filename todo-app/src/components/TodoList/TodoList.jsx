@@ -29,10 +29,11 @@ const TodoList = () => {
         item: trimTask,
         isDone: false,
         isEditing: false,
+        editingItem: trimTask,
       };
       setTasks([...tasks, taskObj]);
     }
-    setTask("");
+    // setTask("");
   };
 
   const InputKeyHandler = (e) => {
@@ -67,6 +68,29 @@ const TodoList = () => {
     setTasks(list);
   };
 
+  const cancleHandler = (index) => {
+    const list = [...tasks];
+    list[index].isEditing = false;
+    setTasks(list);
+  };
+
+  const inputChangeHandler = (index, newItem) => {
+    const list = [...tasks];
+    list[index].editingItem = newItem;
+    setTasks(list);
+  };
+
+  const saveHandler = (index) => {
+    const list = [...tasks];
+    const trimEditingItem = list[index].editingItem.trim();
+    if (trimEditingItem) {
+      list[index].item = list[index].editingItem;
+      list[index].isEditing = false;
+      setTasks(list);
+    } else {
+      cancleHandler(index);
+    }
+  };
   return (
     <>
       <Input
@@ -87,6 +111,9 @@ const TodoList = () => {
           deleteHandler={deleteHandler}
           swapItemHandler={swapItemHandler}
           isEditingHandler={isEditingHandler}
+          cancleHandler={cancleHandler}
+          inputChangeHandler={inputChangeHandler}
+          saveHandler={saveHandler}
         />
       </div>
     </>

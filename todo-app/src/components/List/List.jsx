@@ -8,6 +8,9 @@ const List = ({
   deleteHandler,
   swapItemHandler,
   isEditingHandler,
+  cancleHandler,
+  inputChangeHandler,
+  saveHandler,
 }) => {
   // ['a','b','c'] ==> [<li key="">a</li>, <li key="">b</li>, <li key="">c</li>]
 
@@ -29,15 +32,35 @@ const List = ({
             clickHandler={() => {
               isEditingHandler(index);
             }}
+            isDisable={task.isDone}
           />
         </>
       )}
 
       {task.isEditing && (
         <>
-          <Input value={task.item}/>
-          <Button btnClass={styles.actionBtn} btnText="Save" />
-          <Button btnClass={styles.actionBtn} btnText="Cancel" />
+          <Input
+            value={task.editingItem }
+            changeHandler={(e) => {
+              console.log("Editing", e.target.value);
+              inputChangeHandler(index, e.target.value);
+            }}
+          />
+          <Button
+            btnClass={styles.actionBtn}
+            btnText="Save"
+            clickHandler={() => {
+              saveHandler(index);
+            }}
+            isDisable={!task.editingItem.length}
+          />
+          <Button
+            btnClass={styles.actionBtn}
+            btnText="Cancel"
+            clickHandler={() => {
+              cancleHandler(index);
+            }}
+          />
         </>
       )}
 
@@ -64,6 +87,7 @@ const List = ({
           clickHandler={() => {
             isDoneHandler(index);
           }}
+          isDisable={task.isEditing}
         />
       )}
       {task.isDone && (
