@@ -33,7 +33,7 @@ const TodoList = () => {
       };
       setTasks([...tasks, taskObj]);
     }
-    // setTask("");
+    setTask('');
   };
 
   const InputKeyHandler = (e) => {
