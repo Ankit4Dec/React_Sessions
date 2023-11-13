@@ -1,13 +1,14 @@
 import "./App.css";
+import AddUser from "./pages/AddUser";
 import Home from "./pages/Home";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-
   return (
     <>
       <div className="App">
-        <Home/>
+        {/* <Home/> */}
+        <AddUser />
       </div>
     </>
   );

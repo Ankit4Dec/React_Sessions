@@ -8,6 +8,7 @@ const Header = () => {
           <Navbar.Brand href="#home">Users Profile</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="#">Profiles</Nav.Link>
+            <Nav.Link href="#">Add User</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
