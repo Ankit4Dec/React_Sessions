@@ -12,3 +12,12 @@ export const deleteUsers = (userId) => {
     (res) => res.status === 204
   );
 };
+
+export const setUser = (user) => {
+  const reqObj = {
+    method: "POST",
+    body: JSON.stringify(user),
+  };
+
+  return fetch("https://reqres.in/api/users", reqObj).then((res) => res.json());
+};

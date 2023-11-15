@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./UserForm.module.css";
+import { setUser } from "../../services/users";
 
 const UserForm = () => {
   const [fname, setFname] = useState("");
@@ -7,8 +8,39 @@ const UserForm = () => {
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const resetFields = () => {
+    setFname("");
+    setLname("");
+    setEmail("");
+    setMobile("");
+    setSuccessMsg("");
+    setErrorMsg("");
+  };
+
+  const showSuccessMsg = (msg) => {
+    setSuccessMsg(msg);
+    setTimeout(() => {
+      setSuccessMsg("");
+    }, 5000);
+  };
+
+  const showErrorMsg = (mgs) => {
+    setErrorMsg(mgs);
+    setTimeout(() => {
+      setErrorMsg("");
+    }, 5000);
+  };
 
   const createUserHandler = () => {
+    // generic form validation
+    if (!(fname && lname && email && mobile)) {
+      setErrorMsg("Please enter all required fields !!! ");
+      return;
+    }
+
     const user = {
       fname,
       lname,
@@ -16,20 +48,16 @@ const UserForm = () => {
       mobile,
     };
 
-    const reqObj = {
-      method: "POST",
-      body: JSON.stringify(user),
-    };
-
-    fetch("https://reqres.in/api/users", reqObj)
-      .then((res) => res.json())
+    setIsLoading(true);
+    setUser(user)
       .then((data) => {
-        console.log(data);
-        setFname("");
-        setLname("");
-        setEmail("");
-        setMobile("");
-        setSuccessMsg(`User has been created with user ID : ${data.id} `);
+        resetFields();
+        setIsLoading(false);
+        showSuccessMsg(`User has been created with user ID : ${data.id}`);
+      })
+      .catch(() => {
+        setIsLoading(false);
+        showErrorMsg("There is an error , Please try again !!!  ");
       });
   };
 
@@ -84,10 +112,20 @@ const UserForm = () => {
         />
       </div>
       <div>
-        <button className={styles.inpurfield} onClick={createUserHandler}>
+        <button
+          className={styles.inpurfield}
+          disabled={isLoading}
+          onClick={createUserHandler}
+        >
           Create User
         </button>
+
+        <button onClick={resetFields}>Reset Form</button>
       </div>
+      {isLoading && <div>Loading...</div>}
+
+      <div className={styles.errorMsg}>{errorMsg}</div>
+
       <div className={styles.successMsg}>{successMsg}</div>
     </div>
   );
