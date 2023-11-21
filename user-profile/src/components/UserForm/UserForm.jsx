@@ -34,10 +34,87 @@ const UserForm = () => {
     }, 5000);
   };
 
+  const isValidate = () => {
+    const emailRegex = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
+
+    const validations = [
+      {
+        isValid: !fname,
+        errorMsg: "Please enter the first name",
+      },
+      {
+        isValid: fname.length < 3,
+        errorMsg: "Please enter atleast 3 characters in first name",
+      },
+      {
+        isValid: !lname,
+        errorMsg: "Please enter the last name",
+      },
+      {
+        isValid: lname.length < 3,
+        errorMsg: "Please enter atleast 3 characters in last name",
+      },
+      {
+        isValid: !email,
+        errorMsg: "Please enter email id",
+      },
+      {
+        isValid: !emailRegex.test(email),
+        errorMsg: "Please enter valid email id",
+      },
+      {
+        isValid: !mobile,
+        errorMsg: "Please enter the mobile number",
+      },
+      {
+        isValid: mobile.length !== 10,
+        errorMsg: "Please enter valid mobile number",
+      },
+    ];
+
+    for (const validate of validations) {
+      if (validate.isValid) {
+        setErrorMsg(validate.errorMsg);
+        return false;
+      }
+    }
+
+    // if (!fname) {
+    //   setErrorMsg("Please enter the first name");
+    //   return false;
+    // } else if (fname.length < 3) {
+    //   setErrorMsg("Please enter atleast 3 characters in first name");
+    //   return false;
+    // } else if (!lname) {
+    //   setErrorMsg("Please enter the last name");
+    //   return false;
+    // } else if (lname.length < 3) {
+    //   setErrorMsg("Please enter atleast 3 characters in last name");
+    //   return false;
+    // } else if (!email) {
+    //   setErrorMsg("Please enter email id");
+    //   return false;
+    // } else if (!emailRegex.test(email)) {
+    //   setErrorMsg("Please enter valid email id");
+    //   return false;
+    // } else if (!mobile) {
+    //   setErrorMsg("Please enter the mobile number");
+    //   return false;
+    // } else if (mobile.length !== 10) {
+    //   setErrorMsg("Please enter valid mobile number");
+    //   return false;
+    // }
+    return true;
+  };
+
   const createUserHandler = () => {
     // generic form validation
-    if (!(fname && lname && email && mobile)) {
-      setErrorMsg("Please enter all required fields !!! ");
+    // if (!(fname && lname && email && mobile)) {
+    //   setErrorMsg("Please enter all required fields !!! ");
+    //   return;
+    // }
+
+    if (!isValidate()) {
       return;
     }
 
@@ -103,7 +180,7 @@ const UserForm = () => {
         <label htmlFor="mobile">Mobile Number</label>
         <input
           className={styles.inpurfield}
-          type="text"
+          type="number"
           id="mobile"
           value={mobile}
           onChange={(e) => {
