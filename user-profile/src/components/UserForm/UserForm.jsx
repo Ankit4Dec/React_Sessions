@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import styles from "./UserForm.module.css";
 import { setUser } from "../../services/users";
 
@@ -10,6 +10,11 @@ const UserForm = () => {
   const [successMsg, setSuccessMsg] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+
+  const fnameRef = useRef();
+  const lnameRef = useRef();
+  const emailRef = useRef();
+  const mobileRef = useRef();
 
   const resetFields = () => {
     setFname("");
@@ -41,40 +46,50 @@ const UserForm = () => {
       {
         isValid: !fname,
         errorMsg: "Please enter the first name",
+        refElem: fnameRef,
       },
       {
         isValid: fname.length < 3,
         errorMsg: "Please enter atleast 3 characters in first name",
+        refElem: fnameRef,
       },
       {
         isValid: !lname,
         errorMsg: "Please enter the last name",
+        refElem: lnameRef,
       },
       {
         isValid: lname.length < 3,
         errorMsg: "Please enter atleast 3 characters in last name",
+        refElem: lnameRef,
       },
       {
         isValid: !email,
         errorMsg: "Please enter email id",
+        refElem: emailRef,
       },
       {
         isValid: !emailRegex.test(email),
         errorMsg: "Please enter valid email id",
+        refElem: emailRef,
       },
       {
         isValid: !mobile,
         errorMsg: "Please enter the mobile number",
+        refElem: mobileRef,
       },
       {
         isValid: mobile.length !== 10,
         errorMsg: "Please enter valid mobile number",
+        refElem: mobileRef,
       },
     ];
 
     for (const validate of validations) {
       if (validate.isValid) {
         setErrorMsg(validate.errorMsg);
+        // focus code for error field;
+        validate.refElem.current.focus();
         return false;
       }
     }
@@ -143,6 +158,7 @@ const UserForm = () => {
       <div>
         <label htmlFor="fname">First Name</label>
         <input
+          ref={fnameRef}
           className={styles.inpurfield}
           type="text"
           id="fname"
@@ -155,6 +171,7 @@ const UserForm = () => {
       <div>
         <label htmlFor="lname">Last Name</label>
         <input
+          ref={lnameRef}
           className={styles.inpurfield}
           type="text"
           id="lname"
@@ -167,6 +184,7 @@ const UserForm = () => {
       <div>
         <label htmlFor="email">Email id</label>
         <input
+          ref={emailRef}
           className={styles.inpurfield}
           type="text"
           id="email"
@@ -179,6 +197,7 @@ const UserForm = () => {
       <div>
         <label htmlFor="mobile">Mobile Number</label>
         <input
+          ref={mobileRef}
           className={styles.inpurfield}
           type="number"
           id="mobile"
