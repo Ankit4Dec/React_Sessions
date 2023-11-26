@@ -16,6 +16,8 @@ const UserForm = () => {
   const emailRef = useRef();
   const mobileRef = useRef();
 
+  const reRenderCount = useRef(0);
+
   const resetFields = () => {
     setFname("");
     setLname("");
@@ -223,6 +225,7 @@ const UserForm = () => {
       <div className={styles.errorMsg}>{errorMsg}</div>
 
       <div className={styles.successMsg}>{successMsg}</div>
+      <div>Re-rendering Count: {++reRenderCount.current} </div>
     </div>
   );
 };
