@@ -4,7 +4,7 @@ import routes from "./../../routes/routes.json";
 
 const Header = () => {
   return (
-    <div style={{ marginBottom: "20px" }}>
+    <header style={{ marginBottom: "20px" }}>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
           <Navbar.Brand href="#home">React App</Navbar.Brand>
@@ -24,7 +24,7 @@ const Header = () => {
           </Nav>
         </Container>
       </Navbar>
-    </div>
+    </header>
   );
 };
 

@@ -2,5 +2,6 @@
   "HOME": "/",
   "ABOUT": "/about",
   "PRODUCTS": "/products",
-  "CONTACT_US": "/contact-us"
+  "CONTACT_US": "/contact-us",
+  "SUGGESTION": "suggestion"
 }
