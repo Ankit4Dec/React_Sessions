@@ -1,0 +1,20 @@
+.linkStyle {
+    color: white;
+    text-decoration: none;
+}
+
+.linkStyle:hover {
+    color: white;
+    border-bottom: 3px solid #f1f1f1;
+}
+
+.activeLink {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border: 1px solid #f1f1f1;
+}
+
+.activeLink:hover {
+    color: white;
+}
