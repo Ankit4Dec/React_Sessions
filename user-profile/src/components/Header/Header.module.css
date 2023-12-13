@@ -1,0 +1,12 @@
+.headerContainer {
+    margin-bottom: 20px;
+}
+
+.linkStyle {
+    color: white;
+    text-decoration: none;
+}
+
+.linkStyle:hover {
+    color: white;
+}

@@ -1,18 +1,33 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+import routes from "./../../routes/routes.json";
+import styles from "./Header.module.css";
 
 const Header = () => {
   return (
-    <div style={{ marginBottom: "20px" }}>
+    <header to={styles.headerContainer}>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home">Users Profile</Navbar.Brand>
+          <Navbar.Brand>
+            <NavLink to={routes.HOME} className={styles.linkStyle}>
+              Users Profile
+            </NavLink>{" "}
+          </Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#">Profiles</Nav.Link>
-            <Nav.Link href="#">Add User</Nav.Link>
+            <Nav.Link>
+              <NavLink to={routes.PROFILES} className={styles.linkStyle}>
+                Profiles
+              </NavLink>
+            </Nav.Link>
+            <Nav.Link>
+              <NavLink to={routes.ADD_USER} className={styles.linkStyle}>
+                Add User
+              </NavLink>
+            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
-    </div>
+    </header>
   );
 };
 
