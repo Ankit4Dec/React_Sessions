@@ -4,6 +4,9 @@ import routes from "./../../routes/routes.json";
 import styles from "./Header.module.css";
 
 const Header = () => {
+  const linkStyle = ({ isActive }) =>
+    isActive ? styles.activeStyle : styles.linkStyle;
+
   return (
     <header to={styles.headerContainer}>
       <Navbar bg="dark" data-bs-theme="dark">
@@ -11,16 +14,16 @@ const Header = () => {
           <Navbar.Brand>
             <NavLink to={routes.HOME} className={styles.linkStyle}>
               Users Profile
-            </NavLink>{" "}
+            </NavLink>
           </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link>
-              <NavLink to={routes.PROFILES} className={styles.linkStyle}>
+              <NavLink to={routes.PROFILES} className={linkStyle}>
                 Profiles
               </NavLink>
             </Nav.Link>
             <Nav.Link>
-              <NavLink to={routes.ADD_USER} className={styles.linkStyle}>
+              <NavLink to={routes.ADD_USER} className={linkStyle}>
                 Add User
               </NavLink>
             </Nav.Link>

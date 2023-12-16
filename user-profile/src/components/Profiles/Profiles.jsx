@@ -2,12 +2,16 @@ import { useEffect, useState } from "react";
 import Profile from "../Profile/Profile";
 import styles from "./Profiles.module.css";
 import { getUsers, deleteUsers } from "../../services/users";
+import { Navigate, useNavigate } from "react-router-dom";
+import routes from "./../../routes/routes.json";
 
-const Profiles = () => {
+const Profiles = ({ page = "1" }) => {
   const [users, setUsers] = useState([]);
-  const [page, setPage] = useState(1);
+  // const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const navigate = useNavigate();
+
   // useEffect(() => {
   //   fetch("https://reqres.in/api/users?page=2")
   //     .then((res) => res.json())
@@ -72,8 +76,14 @@ const Profiles = () => {
           {!isError && <div className={styles.profiles}>{profiles}</div>}
 
           <div>
-            <button onClick={() => setPage(page === 1 ? 2 : 1)}>
-              Show Page {page === 1 ? 2 : 1}
+            <button
+              onClick={() => {
+                const nextPage = page === "1" ? "2" : "1";
+                const path = `/${routes.PROFILES}/${nextPage}`;
+                navigate(path);
+              }}
+            >
+              Show Page {page === "1" ? "2" : "1"}
             </button>
           </div>
         </>

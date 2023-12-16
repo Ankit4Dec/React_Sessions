@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import styles from "./UserForm.module.css";
 import { setUser } from "../../services/users";
+import { useNavigate } from "react-router-dom";
+import routes from "./../../routes/routes.json";
 
 const UserForm = () => {
   const [fname, setFname] = useState("");
@@ -17,6 +19,8 @@ const UserForm = () => {
   const mobileRef = useRef();
 
   const reRenderCount = useRef(0);
+
+  const navigate = useNavigate();
 
   const resetFields = () => {
     setFname("");
@@ -147,7 +151,10 @@ const UserForm = () => {
       .then((data) => {
         resetFields();
         setIsLoading(false);
-        showSuccessMsg(`User has been created with user ID : ${data.id}`);
+        showSuccessMsg(
+          `User has been created with user ID : ${data.id}, You will be redirect to HOME PAGE`
+        );
+        setTimeout(() => navigate(routes.HOME), 5000);
       })
       .catch(() => {
         setIsLoading(false);
