@@ -164,7 +164,7 @@ const UserForm = () => {
   };
 
   return (
-    <div className={styles.form}>
+    <>
       <div>
         <label htmlFor="fname">First Name</label>
         <input
@@ -234,7 +234,7 @@ const UserForm = () => {
 
       <div className={styles.successMsg}>{successMsg}</div>
       <div>Re-rendering Count: {++reRenderCount.current} </div>
-    </div>
+    </>
   );
 };
 

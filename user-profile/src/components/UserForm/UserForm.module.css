@@ -1,18 +1,8 @@
-.form {
-    display: inline-block;
-    width: 96%;
-    height: 400px;
-    margin: 20px;
-    border: solid 2px #ddd;
-    padding: 20px;
-}
-
-
 .inpurfield {
     margin: 10px;
 }
 
-.successMsg{
+.successMsg {
     color: green;
     font-weight: 700;
 }

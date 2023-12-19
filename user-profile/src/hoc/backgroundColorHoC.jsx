@@ -1,9 +1,15 @@
-export const backgroundColorHoC = (Component) => {
-  return () => {
+export const backgroundColorHoC = (Component, bgColor = "#f1f1f1") => {
+  const containerStyle = {
+    margin: "15px",
+    padding: "15px",
+    border: " solid 2px #ddd",
+    backgroundColor: bgColor,
+  };
+
+  return (props) => {
     return (
-      <div>
-        <h4>HoC</h4>
-        <Component />
+      <div style={containerStyle}>
+        <Component {...props} />
       </div>
     );
   };
