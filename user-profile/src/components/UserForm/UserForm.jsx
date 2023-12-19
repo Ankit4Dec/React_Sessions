@@ -3,6 +3,7 @@ import styles from "./UserForm.module.css";
 import { setUser } from "../../services/users";
 import { useNavigate } from "react-router-dom";
 import routes from "./../../routes/routes.json";
+import { backgroundColorHoC } from "../../hoc/backgroundColorHoC";
 
 const UserForm = () => {
   const [fname, setFname] = useState("");
@@ -237,4 +238,4 @@ const UserForm = () => {
   );
 };
 
-export default UserForm;
+export default backgroundColorHoC(UserForm);
