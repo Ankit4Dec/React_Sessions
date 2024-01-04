@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import routes from "./../../routes/routes.json";
 import { backgroundColorHoC } from "../../hoc/backgroundColorHoC";
 
-const UserForm = () => {
+const UserForm = ({ children }) => {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
@@ -234,6 +234,7 @@ const UserForm = () => {
 
       <div className={styles.successMsg}>{successMsg}</div>
       <div>Re-rendering Count: {++reRenderCount.current} </div>
+      <div>External Message {children}</div>
     </>
   );
 };
