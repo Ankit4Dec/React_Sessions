@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import routes from "./../../routes/routes.json";
 import styles from "./Header.module.css";
@@ -16,6 +16,7 @@ const Header = () => {
               Users Profile
             </NavLink>
           </Navbar.Brand>
+
           <Nav className="me-auto">
             <Nav.Link>
               <NavLink to={routes.PROFILES} className={linkStyle}>
@@ -27,6 +28,9 @@ const Header = () => {
                 Add User
               </NavLink>
             </Nav.Link>
+          </Nav>
+          <Nav>
+            <Button>Light Theme</Button>
           </Nav>
         </Container>
       </Navbar>
