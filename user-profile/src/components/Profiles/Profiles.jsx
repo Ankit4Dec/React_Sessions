@@ -4,6 +4,7 @@ import styles from "./Profiles.module.css";
 import { getUsers, deleteUsers } from "../../services/users";
 import { Navigate, useNavigate } from "react-router-dom";
 import routes from "./../../routes/routes.json";
+import PropTypes from "prop-types";
 
 const Profiles = ({ page = "1" }) => {
   const [users, setUsers] = useState([]);
@@ -93,3 +94,7 @@ const Profiles = ({ page = "1" }) => {
 };
 
 export default Profiles;
+
+Profiles.propTypes = {
+  page: PropTypes.string,
+};

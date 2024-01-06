@@ -6,11 +6,13 @@ export const backgroundColorHoC = (Component, bgColor = "#f1f1f1") => {
     backgroundColor: bgColor,
   };
 
-  return (props) => {
+  const BackgroundHoc = (props) => {
     return (
       <div style={containerStyle}>
         <Component {...props} />
       </div>
     );
   };
+
+  return BackgroundHoc;
 };
