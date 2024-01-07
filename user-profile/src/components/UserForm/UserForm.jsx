@@ -1,9 +1,10 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import styles from "./UserForm.module.css";
 import { setUser } from "../../services/users";
 import { useNavigate } from "react-router-dom";
 import routes from "./../../routes/routes.json";
 import { backgroundColorHoC } from "../../hoc/backgroundColorHoC";
+import { ThemeContext } from "../../contexts/ThemeContext";
 
 const UserForm = ({ children }) => {
   const [fname, setFname] = useState("");
@@ -22,6 +23,10 @@ const UserForm = ({ children }) => {
   const reRenderCount = useRef(0);
 
   const navigate = useNavigate();
+
+  //Consume the context data
+  const { isDark } = useContext(ThemeContext);
+  console.log(data);
 
   const resetFields = () => {
     setFname("");

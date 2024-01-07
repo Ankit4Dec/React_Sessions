@@ -30,7 +30,7 @@ const Header = () => {
             </Nav.Link>
           </Nav>
           <Nav>
-            <Button>Light Theme</Button>
+            <Button variant="outline-warning">Change Theme</Button>
           </Nav>
         </Container>
       </Navbar>
