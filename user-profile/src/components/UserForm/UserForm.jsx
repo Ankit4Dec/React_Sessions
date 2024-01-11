@@ -26,7 +26,7 @@ const UserForm = ({ children }) => {
 
   //Consume the context data
   const { isDark } = useContext(ThemeContext);
-  console.log(data);
+  console.log(isDark);
 
   const resetFields = () => {
     setFname("");
