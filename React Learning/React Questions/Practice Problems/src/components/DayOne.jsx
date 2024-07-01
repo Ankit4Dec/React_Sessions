@@ -1,3 +1,5 @@
+// Display Hello World on the browser's page
+
 export const DayOne = () => {
   return (
     <div>
