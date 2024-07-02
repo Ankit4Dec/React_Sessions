@@ -9,6 +9,7 @@ import { Seven } from "./components/Seven";
 import { Six } from "./components/Six";
 import { Ten } from "./components/Ten";
 import { Three } from "./components/Three";
+import { Twelve } from "./components/Twelve";
 import { Two } from "./components/Two";
 
 function App() {
@@ -24,7 +25,8 @@ function App() {
       {/* <Eight /> */}
       {/* <Nine /> */}
       {/* <Ten /> */}
-      <Eleven />
+      {/* <Eleven /> */}
+      <Twelve/>
     </>
   );
 }
