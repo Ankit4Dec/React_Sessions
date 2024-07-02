@@ -1,6 +1,7 @@
 import "./App.css";
 import { DayOne } from "./components/DayOne";
 import { Eight } from "./components/Eight";
+import { Eleven } from "./components/Eleven";
 import { Five } from "./components/Five";
 import { Four } from "./components/Four";
 import { Nine } from "./components/Nine";
@@ -22,7 +23,8 @@ function App() {
       {/* <Seven /> */}
       {/* <Eight /> */}
       {/* <Nine /> */}
-      <Ten />
+      {/* <Ten /> */}
+      <Eleven />
     </>
   );
 }
