@@ -3,6 +3,7 @@ import { DayOne } from "./components/DayOne";
 import { Eight } from "./components/Eight";
 import { Five } from "./components/Five";
 import { Four } from "./components/Four";
+import { Nine } from "./components/Nine";
 import { Seven } from "./components/Seven";
 import { Six } from "./components/Six";
 import { Three } from "./components/Three";
@@ -18,7 +19,8 @@ function App() {
       {/* <Five /> */}
       {/* <Six /> */}
       {/* <Seven /> */}
-      <Eight />
+      {/* <Eight /> */}
+      <Nine />
     </>
   );
 }
