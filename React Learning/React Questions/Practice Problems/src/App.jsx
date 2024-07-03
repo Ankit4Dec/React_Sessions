@@ -8,6 +8,7 @@ import { Four } from "./components/Four";
 import { Fourteen } from "./components/Fourteen";
 import { Nine } from "./components/Nine";
 import { Seven } from "./components/Seven";
+import { Seventeen } from "./components/Seventeen";
 import { Six } from "./components/Six";
 import { Sixteen } from "./components/Sixteen";
 import { Ten } from "./components/Ten";
@@ -36,7 +37,8 @@ function App() {
       {/* <Thirteen /> */}
       {/* <Fourteen items={items} /> */}
       {/* <Fifteen items={items} itemsPerPage={2} /> */}
-      <Sixteen />
+      {/* <Sixteen /> */}
+      <Seventeen />
     </>
   );
 }
