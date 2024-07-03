@@ -9,6 +9,7 @@ import { Fourteen } from "./components/Fourteen";
 import { Nine } from "./components/Nine";
 import { Seven } from "./components/Seven";
 import { Six } from "./components/Six";
+import { Sixteen } from "./components/Sixteen";
 import { Ten } from "./components/Ten";
 import { Thirteen } from "./components/Thirteen";
 import { Three } from "./components/Three";
@@ -34,7 +35,8 @@ function App() {
       {/* <Twelve/> */}
       {/* <Thirteen /> */}
       {/* <Fourteen items={items} /> */}
-      <Fifteen items={items} itemsPerPage={2} />
+      {/* <Fifteen items={items} itemsPerPage={2} /> */}
+      <Sixteen />
     </>
   );
 }
