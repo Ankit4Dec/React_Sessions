@@ -1,6 +1,10 @@
 import "./App.css";
+import { ThemeProvider } from "./ThemeContext";
+
 import { DayOne } from "./components/DayOne";
 import { Eight } from "./components/Eight";
+import { Eighteen } from "./components/Eighteen";
+import EighteenComp from "./components/EighteenComp";
 import { Eleven } from "./components/Eleven";
 import { Fifteen } from "./components/Fifteen";
 import { Five } from "./components/Five";
@@ -38,7 +42,13 @@ function App() {
       {/* <Fourteen items={items} /> */}
       {/* <Fifteen items={items} itemsPerPage={2} /> */}
       {/* <Sixteen /> */}
-      <Seventeen />
+      {/* <Seventeen /> */}
+      <ThemeProvider>
+        <div className="App">
+          <Eighteen />
+          <EighteenComp />
+        </div>
+      </ThemeProvider>
     </>
   );
 }
