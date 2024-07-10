@@ -1,4 +1,5 @@
 import "./App.css";
+import { CartProvider } from "./CartContext.jsx";
 import { ThemeProvider } from "./ThemeContext";
 
 import { DayOne } from "./components/DayOne";
@@ -11,6 +12,7 @@ import { Five } from "./components/Five";
 import { Four } from "./components/Four";
 import { Fourteen } from "./components/Fourteen";
 import { Nine } from "./components/Nine";
+import { Ninteen } from "./components/Ninteen";
 import { Seven } from "./components/Seven";
 import { Seventeen } from "./components/Seventeen";
 import { Six } from "./components/Six";
@@ -43,12 +45,16 @@ function App() {
       {/* <Fifteen items={items} itemsPerPage={2} /> */}
       {/* <Sixteen /> */}
       {/* <Seventeen /> */}
-      <ThemeProvider>
+      {/* <ThemeProvider>
         <div className="App">
           <Eighteen />
           <EighteenComp />
         </div>
-      </ThemeProvider>
+      </ThemeProvider> */}
+
+      <CartProvider>
+        <Ninteen />
+      </CartProvider>
     </>
   );
 }
