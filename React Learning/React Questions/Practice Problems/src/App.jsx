@@ -21,6 +21,7 @@ import { Ten } from "./components/Ten";
 import { Thirteen } from "./components/Thirteen";
 import { Three } from "./components/Three";
 import { Twelve } from "./components/Twelve";
+import { Twenty } from "./components/Twenty.jsx";
 import { Two } from "./components/Two";
 
 function App() {
@@ -52,9 +53,11 @@ function App() {
         </div>
       </ThemeProvider> */}
 
-      <CartProvider>
+      {/* <CartProvider>
         <Ninteen />
-      </CartProvider>
+      </CartProvider> */}
+
+      <Twenty />
     </>
   );
 }
