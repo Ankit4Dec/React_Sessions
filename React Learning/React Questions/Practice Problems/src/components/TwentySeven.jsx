@@ -21,6 +21,9 @@ export const TwentySeven = () => {
   function toggleActive() {
     setState({ ...state, isActive: !state.isActive });
   }
+  function decrementCount() {
+    setState({ ...state, count: state.count - 1 });
+  }
 
   return (
     <>
@@ -31,6 +34,7 @@ export const TwentySeven = () => {
         <p>Active:{state.isActive ? "YES" : "No"} </p>
 
         <button onClick={incrementCount}>Increment</button>
+        <button onClick={decrementCount}>Decrement</button>
         <button onClick={chnageText}>Change Text</button>
         <button onClick={toggleActive}>Toggle Active</button>
       </div>
