@@ -23,6 +23,7 @@ import { Thirteen } from "./components/Thirteen";
 import { Three } from "./components/Three";
 import { Twelve } from "./components/Twelve";
 import { Twenty } from "./components/Twenty.jsx";
+import { TwentyFour } from "./components/TwentyFour.jsx";
 import { TwentyOne } from "./components/TwentyOne.jsx";
 import { TwentyThree } from "./components/TwentyThree.jsx";
 import { TwentyTwo } from "./components/TwentyTwo.jsx";
@@ -65,9 +66,11 @@ function App() {
       {/* <TwentyOne /> */}
       {/* <TwentyTwo /> */}
 
-      <AuthProvider>
+      {/* <AuthProvider>
         <TwentyThree />
-      </AuthProvider>
+      </AuthProvider> */}
+
+      <TwentyFour />
     </>
   );
 }
