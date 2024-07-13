@@ -24,6 +24,7 @@ import { Thirteen } from "./components/Thirteen";
 import { Three } from "./components/Three";
 import { Twelve } from "./components/Twelve";
 import { Twenty } from "./components/Twenty.jsx";
+import { TwentyEight } from "./components/TwentyEight.jsx";
 import { TwentyFive } from "./components/TwentyFive.jsx";
 import { TwentyFour } from "./components/TwentyFour.jsx";
 import { TwentyOne } from "./components/TwentyOne.jsx";
@@ -82,7 +83,9 @@ function App() {
 
       {/* <TwentySix /> */}
 
-      <TwentySeven />
+      {/* <TwentySeven /> */}
+
+      <TwentyEight />
     </>
   );
 }
