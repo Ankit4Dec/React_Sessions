@@ -1,8 +1,12 @@
+import { useEffect } from "react";
+
 export const Contact = () => {
-    return (
-      <>
-        <div>Contact Page</div>
-      </>
-    );
-  };
-  
+  useEffect(() => {
+    document.title = "Contact Us";
+  }, []);
+  return (
+    <>
+      <div>Contact Page</div>
+    </>
+  );
+};

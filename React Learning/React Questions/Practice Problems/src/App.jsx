@@ -27,6 +27,7 @@ import { Twenty } from "./components/Twenty.jsx";
 import { TwentyEight } from "./components/TwentyEight.jsx";
 import { TwentyFive } from "./components/TwentyFive.jsx";
 import { TwentyFour } from "./components/TwentyFour.jsx";
+import { TwentyNine } from "./components/TwentyNine.jsx";
 import { TwentyOne } from "./components/TwentyOne.jsx";
 import { TwentySeven } from "./components/TwentySeven.jsx";
 import { TwentySix } from "./components/TwentySix.jsx";
@@ -85,7 +86,8 @@ function App() {
 
       {/* <TwentySeven /> */}
 
-      <TwentyEight />
+      {/* <TwentyEight /> */}
+      <TwentyNine/>
     </>
   );
 }
