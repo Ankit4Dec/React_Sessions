@@ -1,4 +1,5 @@
 import "./App.css";
+import { AuthProvider } from "./AuthContext.jsx";
 import { CartProvider } from "./CartContext.jsx";
 import { ThemeProvider } from "./ThemeContext";
 
@@ -23,6 +24,7 @@ import { Three } from "./components/Three";
 import { Twelve } from "./components/Twelve";
 import { Twenty } from "./components/Twenty.jsx";
 import { TwentyOne } from "./components/TwentyOne.jsx";
+import { TwentyThree } from "./components/TwentyThree.jsx";
 import { TwentyTwo } from "./components/TwentyTwo.jsx";
 import { Two } from "./components/Two";
 
@@ -61,7 +63,11 @@ function App() {
 
       {/* <Twenty /> */}
       {/* <TwentyOne /> */}
-      <TwentyTwo />
+      {/* <TwentyTwo /> */}
+
+      <AuthProvider>
+        <TwentyThree />
+      </AuthProvider>
     </>
   );
 }
