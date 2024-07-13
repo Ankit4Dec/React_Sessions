@@ -1,6 +1,7 @@
 import "./App.css";
 import { AuthProvider } from "./AuthContext.jsx";
 import { CartProvider } from "./CartContext.jsx";
+import { LocalizationProvider } from "./LocalizationContext.jsx";
 import { ThemeProvider } from "./ThemeContext";
 
 import { DayOne } from "./components/DayOne";
@@ -23,6 +24,7 @@ import { Thirteen } from "./components/Thirteen";
 import { Three } from "./components/Three";
 import { Twelve } from "./components/Twelve";
 import { Twenty } from "./components/Twenty.jsx";
+import { TwentyFive } from "./components/TwentyFive.jsx";
 import { TwentyFour } from "./components/TwentyFour.jsx";
 import { TwentyOne } from "./components/TwentyOne.jsx";
 import { TwentyThree } from "./components/TwentyThree.jsx";
@@ -70,7 +72,11 @@ function App() {
         <TwentyThree />
       </AuthProvider> */}
 
-      <TwentyFour />
+      {/* <TwentyFour /> */}
+
+      <LocalizationProvider>
+        <TwentyFive />
+      </LocalizationProvider>
     </>
   );
 }
