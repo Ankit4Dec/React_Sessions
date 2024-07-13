@@ -27,6 +27,7 @@ import { Twenty } from "./components/Twenty.jsx";
 import { TwentyFive } from "./components/TwentyFive.jsx";
 import { TwentyFour } from "./components/TwentyFour.jsx";
 import { TwentyOne } from "./components/TwentyOne.jsx";
+import { TwentySeven } from "./components/TwentySeven.jsx";
 import { TwentySix } from "./components/TwentySix.jsx";
 import { TwentyThree } from "./components/TwentyThree.jsx";
 import { TwentyTwo } from "./components/TwentyTwo.jsx";
@@ -79,7 +80,9 @@ function App() {
         <TwentyFive />
       </LocalizationProvider> */}
 
-      <TwentySix />
+      {/* <TwentySix /> */}
+
+      <TwentySeven />
     </>
   );
 }
